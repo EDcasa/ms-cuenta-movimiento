@@ -1,0 +1,25 @@
+server:
+  port: 8101
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+---
+spring:
+  datasource:
+    postgres:
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://batyr.db.elephantsql.com/qozzmvjz
+      username: qozzmvjz
+      password: 1L0mYRORLK9hU8-W-9mvSaqTwZ9Y9QxP
+      hikari:
+        minimumIdle: ${base.minimumidle:5}
+        connectionTimeout: ${base.timeout:60000}
+        idleTimeout: ${base.idletimeout:600000}
+        maxLifetime: ${base.maxlifetime:180000}
+        maximumPoolSize: ${base.maxpoolsize:300}
+        connectionTestQuery: SELECT 1
+springdoc:
+  swagger-ui:
+    enabled: true
